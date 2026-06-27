@@ -47,7 +47,7 @@ const Projects = () => {
 
         <div className="project-item right">
           <div className="timeline-dot-proj"></div>
-          <div className={`project-card ${activeProject === 'voice' ? 'active' : ''}`} onClick={() => toggleDescription('voice')}>
+          <div className={`project-card ${activeProject === 'voice2' ? 'active' : ''}`} onClick={() => toggleDescription('voice2')}>
             <div className="card-header-proj">
               <img src={flutterImg} alt="Python AI" className="project-logo" />
               <div className="header-content-proj">
@@ -55,7 +55,7 @@ const Projects = () => {
                 <h2>Mobile Application</h2>
               </div>
             </div>
-            <div className={`card-body-proj ${activeProject === 'voice' ? 'show-description' : ''}`}>
+            <div className={`card-body-proj ${activeProject === 'voice2' ? 'show-description' : ''}`}>
               <div className="description">
                 <p>Building an Flutter App for managing the basic functionality of Course Academy</p>
                 <div className="tech-stack">
@@ -69,7 +69,7 @@ const Projects = () => {
 
         <div className="project-item left">
           <div className="timeline-dot-proj"></div>
-          <div className={`project-card ${activeProject === 'voice' ? 'active' : ''}`} onClick={() => toggleDescription('voice')}>
+          <div className={`project-card ${activeProject === 'voice1' ? 'active' : ''}`} onClick={() => toggleDescription('voice1')}>
             <div className="card-header-proj">
               <img src={elecImg} alt="Python AI" className="project-logo" />
               <div className="header-content-proj">
@@ -77,7 +77,7 @@ const Projects = () => {
                 <h2>Desktop Application for Marquee</h2>
               </div>
             </div>
-            <div className={`card-body-proj ${activeProject === 'voice' ? 'show-description' : ''}`}>
+            <div className={`card-body-proj ${activeProject === 'voice1' ? 'show-description' : ''}`}>
               <div className="description">
                 <p>Booking Reservation System and full finance management for Areena Marquee using Electron.js</p>
                 <div className="tech-stack">
