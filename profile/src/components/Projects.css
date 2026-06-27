@@ -1,0 +1,55 @@
+.projects-container {
+  padding: clamp(1.25rem, 5vw, 2.5rem);
+  background: linear-gradient(135deg, rgb(0, 0, 0) 0%, #000000 100%);
+  color: #e0e4eb;
+  min-height: 100vh;
+  animation: fadeIn 0.8s ease-out;
+}
+.projects-title { font-size: clamp(1.75rem, 6vw, 2.5rem); font-weight: 700; color: #ffffff; margin-bottom: clamp(1.5rem, 5vw, 2.5rem); text-align: center; text-shadow: 0 2px 10px rgba(59, 130, 246, 0.3); }
+
+.timeline-container-proj { position: relative; max-width: 1200px; margin: 0 auto; padding: clamp(1rem, 3vw, 1.5rem); }
+.timeline-container-proj::after { content: ''; position: absolute; width: 2px; background: linear-gradient(to bottom, transparent, #3b82f6, transparent); top: 0; bottom: 0; left: 50%; margin-left: -1px; animation: glowLine 2s ease-in-out infinite; }
+@keyframes glowLine { 0%, 100% { box-shadow: 0 0 5px #3b82f6; } 50% { box-shadow: 0 0 20px #3b82f6; } }
+
+.project-item { padding: clamp(0.5rem, 2vw, 0.75rem) clamp(1.5rem, 4vw, 2.5rem); position: relative; width: 50%; animation: fadeInSlide 0.6s ease-out forwards; opacity: 0; box-sizing: border-box; }
+.project-item.right { left: 50%; }
+.project-item.left { left: 0; }
+.timeline-dot-proj { width: 20px; height: 20px; background: #3b82f6; border-radius: 50%; position: absolute; right: -8px; top: 50%; transform: translateY(-20%); z-index: 2; box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.2); }
+.project-item.right .timeline-dot-proj { left: -11.9px; }
+
+.project-card { background: rgba(30, 41, 59, 0.8); border-radius: 16px; overflow: hidden; backdrop-filter: blur(8px); border: 1px solid rgba(59, 130, 246, 0.2); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); cursor: pointer; }
+.project-card:hover, .project-card.active { border-color: rgba(59, 130, 246, 0.5); box-shadow: 0 8px 30px rgba(59, 130, 246, 0.2); }
+
+.card-header-proj { padding: clamp(1rem, 3vw, 1.25rem); display: flex; align-items: center; gap: clamp(0.75rem, 2vw, 1rem); background: rgba(15, 23, 42, 0.6); flex-wrap: wrap; }
+.project-logo { width: clamp(50px, 12vw, 60px); height: clamp(50px, 12vw, 60px); border-radius: 12px; object-fit: cover; flex-shrink: 0; }
+.header-content-proj { flex: 1; min-width: 150px; }
+.header-content-proj h2 { font-size: clamp(1rem, 3vw, 1.2rem); margin-top: 8px; color: #ffffff; letter-spacing: 0.5px; margin: 0; }
+.year-badge-proj { background: rgba(59, 130, 246, 0.2); padding: 4px 12px; border-radius: 12px; font-size: clamp(0.75rem, 1.5vw, 0.9rem); color: #60a5fa; display: inline-block; margin-bottom: 10px; border: 1px solid rgba(59, 130, 246, 0.1); }
+
+/* ACCORDION HIDE/SHOW FOR PROJECTS ONLY */
+.card-body-proj { opacity: 0; height: 0; overflow: hidden; transition: all 0.3s ease-out; }
+.project-card:hover .card-body-proj, .project-card.active .card-body-proj { opacity: 1; height: auto; min-height: auto; }
+
+.description { padding: clamp(1rem, 2vw, 1.25rem); }
+.description p { margin-bottom: 15px; line-height: 1.6; font-size: clamp(0.9rem, 1.5vw, 1rem); }
+.tech-stack { display: flex; flex-wrap: wrap; gap: clamp(0.5rem, 1vw, 0.75rem); margin-top: 15px; }
+.tech-tag { padding: 4px 12px; background: rgba(59, 130, 246, 0.1); color: #60a5fa; border-radius: 20px; font-size: clamp(0.8rem, 1.5vw, 0.9rem); border: 1px solid rgba(59, 130, 246, 0.2); }
+
+@keyframes fadeInSlide { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (max-width: 640px) {
+  .timeline-container-proj { padding: 1rem 1.5rem; }
+  .timeline-container-proj::after { left: 22px; }
+  .project-item { width: 100%; padding-left: clamp(3rem, 10vw, 4rem); padding-right: 1rem; }
+  .project-item.right { left: 0; }
+  .timeline-dot-proj { left: 13px; right: auto; }
+  .project-item.right .timeline-dot-proj { left: 13px; }
+}
+@media (min-width: 641px) and (max-width: 1024px) {
+  .timeline-container-proj { padding: 1rem 2rem; }
+  .timeline-container-proj::after { left: 40%; }
+  .project-item { width: 100%; padding-left: 3rem; padding-right: 1rem; }
+  .project-item.right { left: 0; }
+  .timeline-dot-proj { left: -8px; right: auto; }
+  .project-item.right .timeline-dot-proj { left: -8px; }
+}

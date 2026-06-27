@@ -1,0 +1,18 @@
+.skills-container {
+  padding: clamp(1.25rem, 5vw, 2.5rem);
+  background: linear-gradient(135deg, rgb(0, 0, 0) 0%, #000000 100%);
+  color: #e0e4eb;
+  min-height: 100vh;
+  animation: fadeIn 0.8s ease-out;
+}
+.skills-title { font-size: clamp(1.75rem, 6vw, 2.5rem); font-weight: 700; color: #ffffff; margin-bottom: clamp(1.5rem, 5vw, 2.5rem); text-align: center; text-shadow: 0 2px 10px rgba(59, 130, 246, 0.3); }
+.skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(clamp(150px, 25vw, 200px), 1fr)); gap: clamp(1rem, 3vw, 1.5rem); margin: 0 auto; max-width: 1400px; padding: clamp(0.5rem, 3vw, 1.5rem); }
+.skill-card { background: rgba(30, 41, 59, 0.8); border-radius: 16px; overflow: hidden; backdrop-filter: blur(8px); border: 1px solid rgba(59, 130, 246, 0.2); transition: all 0.4s; display: flex; flex-direction: column; cursor: pointer; }
+.skill-card:hover { transform: translateY(-10px) scale(1.02); box-shadow: 0 8px 30px rgba(59, 130, 246, 0.3); border-color: rgba(59, 130, 246, 0.5); }
+.skill-image-container { aspect-ratio: 16/9; overflow: hidden; display: flex; align-items: center; justify-content: center; padding: clamp(1rem, 3vw, 1.25rem); background: rgba(15, 23, 42, 0.5); }
+.skill-image { width: 100%; height: 100%; object-fit: contain; transition: transform 0.4s ease; }
+.skill-card:hover .skill-image { transform: scale(1.1); }
+.skill-name { padding: clamp(0.75rem, 2vw, 1rem); text-align: center; color: #e0e4eb; font-weight: 500; font-size: clamp(0.85rem, 2vw, 1.1rem); background: rgba(15, 23, 42, 0.9); border-top: 1px solid rgba(59, 130, 246, 0.2); letter-spacing: 0.5px; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+@media (max-width: 480px) { .skills-container { padding: 1rem; } .skills-grid { grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); gap: 0.75rem; } .skill-image-container { padding: 0.75rem; } }
+@media (min-width: 481px) and (max-width: 768px) { .skills-grid { grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 1rem; } }
